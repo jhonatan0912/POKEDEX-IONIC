@@ -1,9 +1,15 @@
 export interface Pokemon {
+  id: number;
   name: string;
-  url: string;
-}
-
-export interface PokemonView {
-  id: string;
-  abilities: [];
+  image: string;
+  types?: [
+    {
+      slot: number,
+      type: {
+        name: string,
+        url: string
+      }
+    }
+  ];
+  cssClass: string;
 }

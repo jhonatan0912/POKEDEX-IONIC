@@ -12,16 +12,24 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col size="6" *ngFor="let pokemon of pokemonsList;index as i">
-        <ion-card>
+      <ion-col size="6" *ngFor="let character of pokemonsList;">
+        <ion-card class="ion-padding-vertical {{character.cssClass}} card" color="light">
           <ion-card-subtitle class="ion-text-center">
-            {{pokemon.name}}
+            {{character.name}}
           </ion-card-subtitle>
-          <ion-card-content>
-            <ion-avatar>
-              <img
-                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/{{i+1}}.svg" />
-            </ion-avatar>
+
+          <ion-card-content class="content__container">
+            <div class="type__container">
+              <ion-text class="type__text" *ngFor="let tipo of character.types">
+                {{tipo.type.name}}
+              </ion-text>
+            </div>
+            <!-- <ion-avatar>
+              <img src={{character.image}} />
+            </ion-avatar> -->
+
+            <ion-img [src]="character.image"></ion-img>
+
           </ion-card-content>
         </ion-card>
       </ion-col>

@@ -13,8 +13,8 @@ import { ListPage } from './list.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ListPageRoutingModule
+    ListPageRoutingModule,
   ],
   declarations: [ListPage]
 })
-export class ListPageModule {}
+export class ListPageModule { }
