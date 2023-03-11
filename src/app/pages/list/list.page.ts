@@ -27,12 +27,12 @@ export class ListPage implements OnInit {
 
     setTimeout(() => {
       this.pokeService.getPokemon(this.offset)
-        .subscribe((res: any) => {
+        .subscribe((res: any) => {          
           this.pokemonList = [...this.pokemonList, ...res];
           if (event) {
             event.target.complete();
           }
-          if (this.offset === 30) {
+          if (this.offset === 100) {
             this.infiniteScroll.disabled = true;
           }
         })

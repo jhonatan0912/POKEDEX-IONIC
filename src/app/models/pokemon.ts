@@ -3,6 +3,14 @@ export interface Pokemon {
   image: string;
   name: string;
   url: string;
-  types: [];
+  types: [
+    {
+      slot: number;
+      type: {
+        name: string;
+        url: string;
+      }
+    }
+  ];
   background: string;
 }

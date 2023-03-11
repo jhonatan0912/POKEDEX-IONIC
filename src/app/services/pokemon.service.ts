@@ -10,7 +10,8 @@ import { Observable, forkJoin } from 'rxjs';
 export class PokemonService {
 
   baseUrl = 'https://pokeapi.co/api/v2';
-  imageUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/'
+  // imageUrl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/'
+  imageUrl ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/"
 
   constructor(public http: HttpClient) { }
 
@@ -39,7 +40,7 @@ export class PokemonService {
   }
 
   getImage(index: number) {
-    return `${this.imageUrl}${index}.svg`;
+    return `${this.imageUrl}${index}.png`;
   }
 
   getPokemonDetails(index: number) {

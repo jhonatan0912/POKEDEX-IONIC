@@ -9,19 +9,21 @@
 
 <ion-content>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col size="auto" size="6" *ngFor="let pokemon of pokemonList;" routerLink="/details/{{pokemon.pokeIndex}}">
-
-        <ion-card class="{{pokemon.background}} ion-padding ion-height-100">
-          <ion-text color="primary" class="ion-text-capitalize">
-            <h5 style="color:white">{{pokemon.name}}</h5>
-          </ion-text>
-          <ion-card-content>
-            <ion-img [src]="pokemon.image"></ion-img>
-          </ion-card-content>
-        </ion-card>
-
+  <ion-grid fixed>
+    <ion-row class="row ion-padding-horizontal">
+      <ion-col class="{{pokemon.background}} rounded" size="5.9" size-lg="2" *ngFor="let pokemon of pokemonList;"
+        routerLink="/details/{{pokemon.pokeIndex}}">
+        <ion-text color="primary" class="ion-text-capitalize">
+          <h5 style="color:white">{{pokemon.name}}</h5>
+        </ion-text>
+        <div class="container">
+          <div class="type__container">
+            <small *ngFor="let t of pokemon.types" class="ion-text-capitalize">
+              {{t.type.name}}
+            </small>
+          </div>
+          <ion-img [src]="pokemon.image" style="width: 100%;height: auto;"></ion-img>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>
