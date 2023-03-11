@@ -7,10 +7,69 @@ export interface Pokemon {
     {
       slot: number;
       type: {
-        name: string;
-        url: string;
+        name: string,
+        url: string,
       }
     }
   ];
   background: string;
+}
+
+export interface PokemonDetail {
+  abilities: [
+    {
+      ability: {
+        name: string,
+        url: string,
+      }
+    }
+  ],
+  base_experience: string;
+  game_indices: [
+    {
+      game_index: number;
+      version: {
+        name: string,
+        url: string,
+      }
+    }
+  ],
+  height: string;
+  id: string;
+  moves: [
+    {
+      move: {
+        name: string,
+        url: string,
+      }
+    }
+  ],
+  species: {
+    name: string,
+    url: string,
+  },
+  sprites: {
+
+  }
+  ,
+  stats: [
+    {
+      base_stat: string,
+      effort: string,
+      stat: {
+        name: string;
+        url: string
+      }
+    }
+  ],
+  types: [
+    {
+      slot: string,
+      type: {
+        name: string,
+        url: string
+      }
+    }
+  ],
+  weight: string;
 }
