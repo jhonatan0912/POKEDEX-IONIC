@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonsService } from "./../../services/pokemons.service";
 import { Pokemon } from 'src/app/models/Pokemon';
 
-
-
 @Component({
   selector: 'app-list',
   templateUrl: './list.page.html',
@@ -25,9 +23,9 @@ export class ListPage implements OnInit {
     cssClass: '',
   };
 
-  pokemonsList: Pokemon[] = []
+  pokemonsList: Pokemon[] = [];
 
-  cssClass: string = ''
+  cssClass: string = '';
 
   constructor(private pokemonService: PokemonsService) { }
 
@@ -47,9 +45,23 @@ export class ListPage implements OnInit {
             cssClass: response.types[0].type.name
           }
           this.pokemonsList.push(this.pokemon)
-          console.log(this.pokemon.types)
         });
     }
+  }
+  initial = 11;
+
+  async loadData(event: any) {
+
+    setTimeout(() => {
+
+      // this.pokemonService.getPokemonByIdRequtest(11)
+      //   .subscribe((response: any) => {
+      //     console.log(response);
+      //   })
+      /* Telling the infinite scroll to stop loading more data. */
+      event.target.complete();
+    }, 1500);
+
   }
 
 }
