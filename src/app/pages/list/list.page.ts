@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from './../../services/pokemon.service';
+import { Pokemon } from 'src/app/models/pokemon';
 
 @Component({
   selector: 'app-list',
@@ -9,7 +10,7 @@ import { PokemonService } from './../../services/pokemon.service';
 export class ListPage implements OnInit {
 
   offset = 0;
-  pokemonList: any = [];
+  pokemonList: Pokemon[] = [];
 
   constructor(private pokeService: PokemonService) { }
 
