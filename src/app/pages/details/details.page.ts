@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
   selector: 'app-details',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsPage implements OnInit {
 
-  constructor() { }
+  details: any;
+  imgUrl: string = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/"
+
+  constructor(private route: ActivatedRoute, private pokeService: PokemonService) { }
 
   ngOnInit() {
+    const params = this.route.snapshot.params;
+    const { index } = params
+    this.pokeService.getPokemonDetails(index)
+      .subscribe((details: any) => {
+        this.details = details;
+      })
   }
 
 }

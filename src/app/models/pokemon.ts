@@ -1,15 +1,8 @@
 export interface Pokemon {
-  id: number;
-  name: string;
+  pokeIndex: string;
   image: string;
-  types?: [
-    {
-      slot: number,
-      type: {
-        name: string,
-        url: string
-      }
-    }
-  ];
-  cssClass: string;
+  name: string;
+  url: string;
+  types: [];
+  background: string;
 }

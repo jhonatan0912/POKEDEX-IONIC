@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
     <ion-title>List</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -8,17 +11,24 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col size="6" *ngFor="let pokemon of pokemonList;">
-        <ion-text color="primary">
-          <h4>{{pokemon.name}}</h4>
-        </ion-text>
-        <ion-card-content>
-          <ion-text color="primary" *ngFor="let t of pokemon.types">
-            <h6>{{t.type.name}}</h6>
+      <ion-col size="auto" size="6" *ngFor="let pokemon of pokemonList;" routerLink="/details/{{pokemon.pokeIndex}}">
+
+        <ion-card class="{{pokemon.background}} ion-padding ion-height-100">
+          <ion-text color="primary" class="ion-text-capitalize">
+            <h5 style="color:white">{{pokemon.name}}</h5>
           </ion-text>
-        </ion-card-content>
+          <ion-card-content>
+            <ion-img [src]="pokemon.image"></ion-img>
+          </ion-card-content>
+        </ion-card>
+
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <ion-infinite-scroll threshold="100px" position="bottom" (ionInfinite)="loadPokemon(true,$event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more pokemons...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
 </ion-content>

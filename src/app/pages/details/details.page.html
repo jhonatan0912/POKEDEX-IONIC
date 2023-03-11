@@ -1,9 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/list"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title></ion-title>
+    <ion-icon slot="end" name="heart-outline"></ion-icon>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <h1 class="ion-text-uppercase">{{details?.name}}</h1>
 
+  <div *ngIf="details">
+    <ion-img src="{{imgUrl}}{{details.id}}.svg" style="height:200px;"></ion-img>
+  </div>
+  <div class="content">
+    a
+  </div>
 </ion-content>

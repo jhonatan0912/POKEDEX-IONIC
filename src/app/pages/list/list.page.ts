@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { PokemonService } from './../../services/pokemon.service';
 import { Pokemon } from 'src/app/models/pokemon';
+import { IonInfiniteScroll } from '@ionic/angular';
 
 @Component({
   selector: 'app-list',
@@ -8,6 +9,7 @@ import { Pokemon } from 'src/app/models/pokemon';
   styleUrls: ['./list.page.scss'],
 })
 export class ListPage implements OnInit {
+  @ViewChild(IonInfiniteScroll) infiniteScroll!: IonInfiniteScroll;
 
   offset = 0;
   pokemonList: Pokemon[] = [];
@@ -18,10 +20,22 @@ export class ListPage implements OnInit {
     this.loadPokemon();
   }
 
-  loadPokemon() {
-    this.pokeService.getPokemon(this.offset)
-      .subscribe((res: any) => {
-        this.pokemonList = res;
-      })
+  loadPokemon(loadMore: boolean = false, event?: any) {
+    if (loadMore) {
+      this.offset += 10;
+    }
+
+    setTimeout(() => {
+      this.pokeService.getPokemon(this.offset)
+        .subscribe((res: any) => {
+          this.pokemonList = [...this.pokemonList, ...res];
+          if (event) {
+            event.target.complete();
+          }
+          if (this.offset === 30) {
+            this.infiniteScroll.disabled = true;
+          }
+        })
+    }, 1500);
   }
 }
