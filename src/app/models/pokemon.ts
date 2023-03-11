@@ -16,6 +16,7 @@ export interface Pokemon {
 }
 
 export interface PokemonDetail {
+  name: string;
   abilities: [
     {
       ability: {
@@ -72,4 +73,5 @@ export interface PokemonDetail {
     }
   ],
   weight: string;
+  background: string;
 }
