@@ -19,6 +19,7 @@ export class DetailsPage implements OnInit {
     const { index } = params
     this.pokeService.getPokemonDetails(index)
       .subscribe((details: any) => {
+        console.log(details);
         this.details = details;
       })
   }

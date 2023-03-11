@@ -11,12 +11,22 @@
 </ion-header>
 
 <ion-content>
-  <h1 class="ion-text-uppercase">{{details?.name}}</h1>
+  <div class="container">
+    <section>
+      <div style="display: flex;justify-content: space-between;" class="ion-padding-horizontal">
+        <h1 class="ion-text-uppercase">{{details?.name}}</h1>
+        <h2># {{details?.id}}</h2>
+      </div>
+      <div *ngIf="details">
+        <ion-img src="{{imgUrl}}{{details.id}}.svg" style="height:200px;"></ion-img>
+      </div>
+    </section>
 
-  <div *ngIf="details">
-    <ion-img src="{{imgUrl}}{{details.id}}.svg" style="height:200px;"></ion-img>
-  </div>
-  <div class="content">
-    a
+    <!-- <div class="content">
+    
+    </div> -->
+    <div>
+
+    </div>
   </div>
 </ion-content>
