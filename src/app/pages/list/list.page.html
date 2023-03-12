@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding-vertical" >
+<ion-content class="ion-padding-vertical">
 
   <ion-grid fixed>
     <ion-row class="row ion-padding-horizontal">
@@ -19,7 +19,9 @@
         <div class="container">
           <div class="type__container">
             <small *ngFor="let t of pokemon.types" class="ion-text-capitalize">
-              {{t.type.name}}
+              <ion-text color="light">
+                {{t.type.name}}
+              </ion-text>
             </small>
           </div>
           <ion-img [src]="pokemon.image" style="width: 100%;height: auto;"></ion-img>

@@ -12,6 +12,7 @@ export class DetailsPage implements OnInit {
 
   details: any;
   imgUrl: string = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/"
+  favorito: boolean = false;
 
   pokemonDetail: PokemonDetail = {
     name: "",
@@ -100,6 +101,10 @@ export class DetailsPage implements OnInit {
         console.log(this.pokemonDetail.background);
 
       })
+  }
+
+  onClick() {
+    this.favorito = !this.favorito;
   }
 
 }

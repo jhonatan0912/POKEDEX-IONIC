@@ -5,8 +5,12 @@
     </ion-buttons>
 
     <ion-title></ion-title>
-    <ion-icon slot="end" name="heart-outline"></ion-icon>
-
+        <ion-buttons slot="end">
+          <ion-button (click)="onClick()">
+            <ion-icon slot="start" [name]="favorito?'heart':'heart-outline'" color="danger"></ion-icon>
+            <!-- Click me -->
+          </ion-button>
+        </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
