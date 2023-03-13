@@ -31,10 +31,10 @@
 
     <div class="content">
       <nav>
-        <a (click)="selectOption(1)">About</a>
-        <a (click)="selectOption(2)">Base Stats</a>
-        <a (click)="selectOption(3)">Evolution</a>
-        <a (click)="selectOption(4)">Moves</a>
+        <a (click)="selectOption(1)" [ngClass]="optionSelected === 1 ? 'bold' : ''">About</a>
+        <a (click)="selectOption(2)" [ngClass]="optionSelected === 2 ? 'bold' : ''">Base Stats</a>
+        <a (click)="selectOption(3)" [ngClass]="optionSelected === 3 ? 'bold' : ''">Evolution</a>
+        <a (click)="selectOption(4)" [ngClass]="optionSelected === 4 ? 'bold' : ''">Moves</a>
       </nav>
 
       <div *ngIf="optionSelected === 1">

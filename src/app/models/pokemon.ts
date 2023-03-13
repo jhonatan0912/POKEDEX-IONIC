@@ -4,16 +4,18 @@ export interface Pokemon {
   image: string;
   name: string;
   url: string;
-  types: [
-    {
-      slot: number;
-      type: {
-        name: string,
-        url: string,
-      }
-    }
-  ];
+  types: Types[]
   background: string;
+}
+
+interface Types {
+  slot: number;
+  type: Type[];
+
+}
+interface Type {
+  name: string;
+  url: string;
 }
 
 /* Defining the interface for the PokemonDetail object. */

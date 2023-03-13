@@ -14,6 +14,7 @@ export class ListPage implements OnInit {
   offset = 0;
   pokemonList: Pokemon[] = [];
 
+
   constructor(private pokeService: PokemonService) { }
 
   ngOnInit() {
@@ -25,7 +26,7 @@ export class ListPage implements OnInit {
    * @param {boolean} [loadMore=false] - boolean = false, event?: any
    * @param {any} [event] - The event that triggered the function.
    */
-  loadPokemon(loadMore: boolean = false, event?: any) {
+  async loadPokemon(loadMore: boolean = false, event?: any) {
     if (loadMore) {
       this.offset += 10;
     }

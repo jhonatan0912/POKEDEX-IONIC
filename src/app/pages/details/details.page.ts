@@ -13,7 +13,7 @@ export class DetailsPage implements OnInit {
   details: any;
   imgUrl: string = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/"
   favorito: boolean = false;
-  optionSelected: number = 1;
+  optionSelected: number = 1;  
 
   pokemonDetail: PokemonDetail = {
     name: "",
