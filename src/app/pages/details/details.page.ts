@@ -79,7 +79,7 @@ export class DetailsPage implements OnInit {
 
   ngOnInit() {
     const params = this.route.snapshot.params;
-    const { index } = params
+    const { index } = params;
     this.pokeService.getPokemonDetails(index)
       .subscribe((details: any) => {
         this.pokemonDetail = {
@@ -98,9 +98,7 @@ export class DetailsPage implements OnInit {
           background: details.types[0].type.name
         }
         this.details = this.pokemonDetail;
-        console.log(this.pokemonDetail.background);
-
-      })
+      });
   }
 
   onClick() {

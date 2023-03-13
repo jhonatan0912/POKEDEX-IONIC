@@ -1,25 +1,28 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/list"></ion-back-button>
+      <ion-back-button defaultHref="/list" mode="ios"></ion-back-button>
     </ion-buttons>
 
     <ion-title></ion-title>
-        <ion-buttons slot="end">
-          <ion-button (click)="onClick()">
-            <ion-icon slot="start" [name]="favorito?'heart':'heart-outline'" color="danger"></ion-icon>
-            <!-- Click me -->
-          </ion-button>
-        </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="onClick()">
+        <ion-icon slot="start" [name]="favorito?'heart':'heart-outline'" color="danger"></ion-icon>
+        <!-- Click me -->
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="container {{details?.background}}">
     <section class="ion-padding-vertical">
-      <div style="display: flex;justify-content: space-between;" class="ion-padding-horizontal">
+      <div style="display: flex;justify-content: space-between;color:#fff;" class="ion-padding-horizontal">
         <h1 class="ion-text-uppercase">{{details?.name}}</h1>
         <h2># {{details?.id}}</h2>
+      </div>
+      <div class="ion-padding-horizontal types">
+        <span style="color:#fff;" *ngFor="let t of details?.types">{{t.type.name}}</span>
       </div>
       <div *ngIf="details">
         <ion-img src="{{imgUrl}}{{details.id}}.svg" style="height:200px;"></ion-img>
@@ -45,7 +48,9 @@
         <ion-row>
           <ion-col size="6">Abilities</ion-col>
           <ion-col size="6">
-            <span *ngFor="let a of details?.abilities" class="ion-text-capitalize">{{a.ability.name}} </span>
+            <span *ngFor="let a of details?.abilities; let isLast = last;" class="ion-text-capitalize detail">
+              {{a.ability.name}}{{!isLast?',':''}}
+            </span>
           </ion-col>
         </ion-row>
       </ion-grid>
