@@ -20,6 +20,11 @@ export class ListPage implements OnInit {
     this.loadPokemon();
   }
 
+  /**
+   * The function takes in a boolean and an event. If the boolean is true, the offset is increased by 10. Then, the function waits 1.5 seconds before calling the getPokemon function from the pokeService. The getPokemon function returns an array of pokemon. The array is then added to the pokemonList array. If the event is not undefined, the event is completed. If the offset is 100, the infiniteScroll is disabled.
+   * @param {boolean} [loadMore=false] - boolean = false, event?: any
+   * @param {any} [event] - The event that triggered the function.
+   */
   loadPokemon(loadMore: boolean = false, event?: any) {
     if (loadMore) {
       this.offset += 10;

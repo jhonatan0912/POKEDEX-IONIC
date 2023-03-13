@@ -1,3 +1,4 @@
+/* Defining the interface for the Pokemon object. */
 export interface Pokemon {
   pokeIndex: string;
   image: string;
@@ -15,6 +16,7 @@ export interface Pokemon {
   background: string;
 }
 
+/* Defining the interface for the PokemonDetail object. */
 export interface PokemonDetail {
   name: string;
   abilities: [
