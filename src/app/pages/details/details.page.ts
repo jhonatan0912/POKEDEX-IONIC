@@ -13,6 +13,7 @@ export class DetailsPage implements OnInit {
   details: any;
   imgUrl: string = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/"
   favorito: boolean = false;
+  optionSelected: number = 1;
 
   pokemonDetail: PokemonDetail = {
     name: "",
@@ -82,6 +83,7 @@ export class DetailsPage implements OnInit {
     const { index } = params;
     this.pokeService.getPokemonDetails(index)
       .subscribe((details: any) => {
+        console.log(details);
         this.pokemonDetail = {
           name: details.name,
           id: details.id,
@@ -103,6 +105,10 @@ export class DetailsPage implements OnInit {
 
   onClick() {
     this.favorito = !this.favorito;
+  }
+
+  selectOption(option: number) {
+    this.optionSelected = option;
   }
 
 }
