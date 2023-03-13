@@ -1,0 +1,99 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+.normal {
+  background: #A8A878;
+}
+
+.fighting {
+  background: #C03028;
+}
+
+.flying {
+  background: #A890F0;
+}
+
+.poison {
+  background: #A040A0;
+}
+
+.ground {
+  background: #E0C068;
+}
+
+.rock {
+  background: #B8A038;
+}
+
+.bug {
+  background: #A8B820;
+}
+
+.ghost {
+  background: #705898;
+}
+
+.steel {
+  background: #B8B8D0;
+}
+
+.fire {
+  background: #F08030;
+}
+
+.water {
+  background: #6890F0;
+}
+
+.grass {
+  background: #49D0B0;
+}
+
+.electric {
+  background: #F8D030;
+}
+
+.psychic {
+  background: #F85888;
+}
+
+.ice {
+  background: #98D8D8;
+}
+
+.dragon {
+  background: #7038F8;
+}
+
+.dark {
+  background: #705848;
+}
+
+.fairy {
+  background: #EE99AC;
+}
