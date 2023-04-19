@@ -15,6 +15,11 @@ export class PokemonService {
 
   constructor(public http: HttpClient) { }
 
+/**
+ * It returns an observable that emits an array of pokemons.
+ * @param {number} [offset=0] - number = 0: This is the offset of the pokemon list.
+ * @returns An Observable of an array of Observables of an array of Pokemons.
+ */
   getPokemon(offset: number = 0): Observable<any> {
     return this.http.get(`${this.baseUrl}/pokemon?offset=${offset}&limit=10`).pipe(
       map((result: any) => {
@@ -39,10 +44,20 @@ export class PokemonService {
     );
   }
 
+/**
+ * This function takes a number as an argument and returns a string that is the concatenation of the imageUrl property and the number passed in as an argument.
+ * @param {number} index - number - the index of the image to get
+ * @returns The imageUrl property is being returned.
+ */
   getImage(index: number) {
     return `${this.imageUrl}${index}.png`;
   }
 
+/**
+ * It takes an index number as an argument, and returns a promise that resolves to a pokemon object.
+ * @param {number} index - number - the index of the pokemon you want to get details for
+ * @returns The getPokemonDetails() method returns an Observable of type Pokemon.
+ */
   getPokemonDetails(index: number) {
     return this.http.get(`${this.baseUrl}/pokemon/${index}`)
   }
